@@ -1,0 +1,16 @@
+version: '2'
+
+networks:
+  todoread-test:
+    driver: bridge
+
+services:
+  sgr-test-postgres:
+    image: postgres
+    networks:
+      - sgr-test
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=password
+
